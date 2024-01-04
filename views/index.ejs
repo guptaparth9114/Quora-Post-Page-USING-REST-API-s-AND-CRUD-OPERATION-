@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="https://play-lh.googleusercontent.com/EAVZzDs5jPuXJaR-zNoD3rzYYUu9VcdXciQYq1w2-n55QQeN3yo_krmM__rMjk4GR5FX">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: maroon;
+            margin-bottom: 20px;
+        }
+
+        .post {
+            background-color: blanchedalmond;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .user {
+            font-style: italic;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            color: #555;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .new {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(13, 13, 61);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .edit {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #802727;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(233, 33, 6);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        .new:hover {
+              background-color: #080827;
+        }
+
+        .edit:hover {
+            background-color: #501818;
+        }
+
+        button:hover {
+            background-color: rgb(99, 3, 3);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <% for(post of posts) { %>
+        <div class="post">
+            <h3 class="user"> @ <%=post.username%></h3>
+            <h4 class="content">  <%=post.content%></h4>
+            
+            <a href="http://localhost:3000/posts/<%= post.id%>"> See In Detail</a>
+            <a class="edit" href="http://localhost:3000/posts/<%= post.id %>/edit"> Edit</a>
+            <br>
+            <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+
+        </div>
+    <%}%>
+    <br><br>
+    <a class="new" href="http://localhost:3000/posts/new">Create new posts</a>
+</body>
+</html>

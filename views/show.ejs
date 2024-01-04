@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Post</title>
+    <link rel="icon" href="https://play-lh.googleusercontent.com/EAVZzDs5jPuXJaR-zNoD3rzYYUu9VcdXciQYq1w2-n55QQeN3yo_krmM__rMjk4GR5FX">
+
+    <style>
+        h2 {
+            color: maroon;
+            margin-bottom: 20px;
+        }
+
+        .post {
+            background-color: blanchedalmond;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .user {
+            font-style: italic;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Here is your post in detail</h2>
+    <p>Post id  <%= post && post.id %></p>
+    <div class="post">
+        <h3 class="user"> @ <%= post && post.username%></h3>
+        <h4 >  <%=post && post.content%></h4>
+    </div>
+
+</body>
+</html>
