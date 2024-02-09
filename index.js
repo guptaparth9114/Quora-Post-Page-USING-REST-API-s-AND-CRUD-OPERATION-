@@ -34,6 +34,10 @@ let posts = [
   },
 ];
 
+app.get("/", (req, res) => {
+  res.send("Your project is live!!");
+});
+
 app.get("/posts", (req, res) => {
   res.render("index.ejs", { posts: posts });
 });
